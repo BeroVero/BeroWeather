@@ -1,8 +1,18 @@
 body {
   /* background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%); */
-  background: linear-gradient(
+  /* background: linear-gradient(
     72.5deg,
     rgba(0, 174, 255, 0.291) 27.9%,
     rgba(0, 224, 254, 0.224) 84.2%
-  );
+  ); */
+  background: #e0c3fc91;
+}
+
+.box {
+  background-color: #f6f4f8ca;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+  border-radius: 10px;
 }
