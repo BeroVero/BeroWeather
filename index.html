@@ -14,27 +14,36 @@
   </head>
   <body>
     <div class="box">
-      <form class="search-form">
-        <input
-          type="text"
-          class="form-input"
-          placeholder="Enter a city..."
-          required
-        />
-        <input type="submit" class="search-button" value="Search" />
-      </form>
+      <header>
+        <form>
+          <input
+            type="text"
+            class="form-input"
+            placeholder="Enter a city..."
+            required
+          />
+          <input type="submit" class="search-button" value="Search" />
+        </form>
+      </header>
 
       <main>
-        <h1>Rome</h1>
-        <div>
-          <p>
-            Wednesday 23:19, broken clouds
-            <br />
-            Humidity: 57%, Wind: 8.75km/h
-          </p>
-        </div>
+        <div class="organizer">
+          <div>
+            <h1 class="app-city">Rome</h1>
 
-        <div>☀️ 25°C</div>
+            <p class="app-details">
+              Wednesday 23:19, broken clouds
+              <br />
+              Humidity: <strong>57%</strong>, Wind: <strong>8.75km/h</strong>
+            </p>
+          </div>
+
+          <div>
+            <span class="app-emoji">☀️</span>
+            <span class="app-temperature">25</span>
+            <span class="app-unit">°C</span>
+          </div>
+        </div>
       </main>
 
       <footer>

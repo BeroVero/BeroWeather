@@ -1,29 +1,28 @@
 body {
-  /* background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%); */
-  /* background: linear-gradient(
-    72.5deg,
-    rgba(0, 174, 255, 0.291) 27.9%,
-    rgba(0, 224, 254, 0.224) 84.2%
-  ); */
-  background: #00bfff28;
+  background: #efe9f4;
   font-family: "Roboto", sanf-serif;
 }
 
 .box {
   background-color: #ffffff;
-  max-width: 500px;
+  max-width: 600px;
   margin: 30px auto;
   padding: 30px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   border-radius: 10px;
 }
 
+form {
+  border-bottom: 1px solid #efe9f4;
+  padding-bottom: 30px;
+}
+
 .form-input {
-  background-color: #f9f7fe;
+  background-color: #efe9f4;
   border: none;
   color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
-  padding: 10px;
+  padding: 15px;
   width: 75%;
   border-radius: 5px;
 }
@@ -31,10 +30,64 @@ body {
 .search-button {
   margin-left: 5px;
   font-size: 16px;
-  background-color: #00bfff;
+  background-color: #1f59c4;
   color: white;
   border: none;
-  padding: 10px;
+  padding: 15px;
   line-height: 1;
   border-radius: 5px;
+}
+
+main {
+  padding: 30px 0;
+}
+
+.organizer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-city {
+  margin: 0;
+  font-size: 38px;
+  line-height: 48px;
+}
+
+.app-details {
+  margin: 0;
+  line-height: 24px;
+  font-size: 16px;
+}
+
+.app-details strong {
+  color: #ee6352;
+}
+
+.app-emoji {
+  font-size: 44px;
+  margin-top: 22px;
+  margin-right: 10px;
+}
+
+.app-temperature {
+  font-size: 88px;
+  font-weight: bold;
+}
+
+.app-unit {
+  font-size: 28px;
+  position: relative;
+  top: -35px;
+}
+
+footer {
+  border-top: 1px solid #efe9f4;
+  padding-top: 30px;
+  font-size: 13px;
+  color: rgba(39, 33, 66, 0.4);
+  text-align: center;
+}
+
+a {
+  color: #494554;
 }
