@@ -12,26 +12,28 @@ function formatDate(date) {
   let weekDayName = weekDays[date.getDay()];
   let hours = date.getHours().toString().padStart(2, "0");
   let minutes = date.getMinutes().toString().padStart(2, "0");
+
   timeDisplayed.innerHTML = `${weekDayName}, ${hours}:${minutes}`;
 }
 
 function updateWeather(response) {
   let temperatureApi = response.data.temperature.current;
   let temperatureLoc = document.querySelector("#app-temperature");
-  temperatureLoc.innerHTML = Math.round(temperatureApi);
-
   let cityDisplayed = document.querySelector("#app-city");
-  cityDisplayed.innerHTML = response.data.city;
-
   let conditionDisplayed = document.querySelector("#app-condition");
-  conditionDisplayed.innerHTML = response.data.condition.description;
-
   let humidityDisplayed = document.querySelector("#humidity-app");
-  humidityDisplayed.innerHTML = response.data.temperature.humidity;
-
   let windDisplayed = document.querySelector("#wind-app");
-  windDisplayed.innerHTML = response.data.wind.speed;
   let date = new Date(response.data.time * 1000);
+  let iconDisplayed = document.querySelector("#app-emoji");
+
+  temperatureLoc.innerHTML = Math.round(temperatureApi);
+  cityDisplayed.innerHTML = response.data.city;
+  conditionDisplayed.innerHTML = response.data.condition.description;
+  humidityDisplayed.innerHTML = response.data.temperature.humidity;
+  windDisplayed.innerHTML = response.data.wind.speed;
+  img = `<img src="${response.data.condition.icon_url}" />`;
+  iconDisplayed.innerHTML = img;
+  console.log(img);
 
   formatDate(date);
 }

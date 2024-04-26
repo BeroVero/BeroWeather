@@ -6,15 +6,10 @@ body {
 .box {
   background-color: #ffffff;
   max-width: 600px;
-  margin: 30px auto;
+  margin: 10px auto;
   padding: 30px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   border-radius: 10px;
-}
-
-form {
-  /* border-bottom: 1px solid #efe9f4;
-  padding-bottom: 30px; */
 }
 
 .form-input {
@@ -48,7 +43,7 @@ main {
 }
 
 .app-city {
-  margin: 0;
+  margin: 15px 0;
   font-size: 38px;
   line-height: 48px;
 }
@@ -64,21 +59,24 @@ main {
 }
 
 .app-emoji {
-  font-size: 44px;
+  width: 88px;
+  height: 88px;
   position: relative;
-  top: -22px;
-  right: 10px;
+  top: 18px;
+  /* right: 5px; */
 }
 
 .app-temperature {
   font-size: 88px;
   font-weight: bold;
+  position: relative;
+  right: -5px;
 }
 
 .app-unit {
   font-size: 28px;
   position: relative;
-  top: -35px;
+  top: -40px;
 }
 
 div.days {
