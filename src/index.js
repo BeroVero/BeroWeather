@@ -52,8 +52,29 @@ function displayCityName(event) {
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", displayCityName);
-
 let apiKey = "34f7boabet4bfa3ede2162049aca8d1a";
 
 // standard value when you load page
 callApiViaCity("Amsterdam");
+
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+  let days = ["Mon", "Mon", "Mon", "Mon", "Mon"];
+  let forecastHtml = "";
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `<div class="col">
+          <div class="forecast-day">${day}</div>
+          <img
+            src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
+            width="36"
+          />
+          <div class="forecast-temperature">
+            <span class="max-temp">17°</span> <span class="min-temp">17°</span>
+          </div>
+        </div>`;
+  });
+  forecast.innerHTML = forecastHtml;
+}
+displayForecast();
