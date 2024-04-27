@@ -79,12 +79,30 @@ main {
   top: -40px;
 }
 
-div.days {
+div.forecast-row {
   display: flex;
   justify-content: space-between;
-  margin: 15px 0;
+  margin: 0px 5px 0px 5px;
   font-weight: 400;
   padding: 30px 0 15px;
+}
+
+div.col {
+  text-align: center;
+}
+
+.forecast-day {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.forecast-temperature {
+  color: #ee6352;
+  font-size: 13px;
+}
+
+.max-temp {
+  font-weight: 500;
 }
 
 footer {
