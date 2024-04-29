@@ -57,7 +57,6 @@ function displayCityName(event) {
 function getWeatherForecast(city) {
   apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
   axios(apiUrl).then(displayForecast);
-  console.log(apiUrl);
 }
 
 function formatDay(timestamp) {
