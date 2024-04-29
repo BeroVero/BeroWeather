@@ -33,13 +33,13 @@ function updateWeather(response) {
   windDisplayed.innerHTML = response.data.wind.speed;
   img = `<img src="${response.data.condition.icon_url}" />`;
   iconDisplayed.innerHTML = img;
-  console.log(img);
 
+  getWeatherForecast(response.data.city);
   formatDate(date);
 }
 
 function callApiViaCity(city) {
-  apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(updateWeather);
 }
 
@@ -54,17 +54,19 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", displayCityName);
 let apiKey = "34f7boabet4bfa3ede2162049aca8d1a";
 
-// standard value when you load page
-callApiViaCity("Amsterdam");
+function getWeatherForecast(city) {
+  apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+}
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
+
   let forecast = document.querySelector("#forecast");
   let days = ["Mon", "Mon", "Mon", "Mon", "Mon"];
   let forecastHtml = "";
   days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `<div class="col">
+    forecastHtml += `<div class="col">
           <div class="forecast-day">${day}</div>
           <img
             src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
@@ -77,4 +79,7 @@ function displayForecast() {
   });
   forecast.innerHTML = forecastHtml;
 }
+
+// standard value when you load page
+callApiViaCity("Amsterdam");
 displayForecast();
