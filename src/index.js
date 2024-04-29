@@ -61,7 +61,7 @@ function getWeatherForecast(city) {
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
-  let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   return days[date.getDay()];
 }
 
@@ -92,4 +92,3 @@ function displayForecast(response) {
 
 // standard value when you load page
 callApiViaCity("Amsterdam");
-displayForecast();
