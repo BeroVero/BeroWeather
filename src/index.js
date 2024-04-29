@@ -1,3 +1,7 @@
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", displayCityName);
+let apiKey = "34f7boabet4bfa3ede2162049aca8d1a";
+
 function formatDate(date) {
   let weekDays = [
     "Sunday",
@@ -50,32 +54,39 @@ function displayCityName(event) {
   callApiViaCity(cityFormInput.value);
 }
 
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", displayCityName);
-let apiKey = "34f7boabet4bfa3ede2162049aca8d1a";
-
 function getWeatherForecast(city) {
   apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
   axios(apiUrl).then(displayForecast);
+  console.log(apiUrl);
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
+  return days[date.getDay()];
 }
 
 function displayForecast(response) {
-  console.log(response.data);
-
   let forecast = document.querySelector("#forecast");
-  let days = ["Mon", "Mon", "Mon", "Mon", "Mon"];
   let forecastHtml = "";
-  days.forEach(function (day) {
-    forecastHtml += `<div class="col">
-          <div class="forecast-day">${day}</div>
-          <img
-            src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
-            width="36"
+
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml += `<div class="col">
+          <div class="forecast-day">${formatDay(day.time)}</div>
+          <img class="forecast-img"
+            src=${day.condition.icon_url}
+        
           />
           <div class="forecast-temperature">
-            <span class="max-temp">17°</span> <span class="min-temp">17°</span>
+            <span class="max-temp">${Math.round(
+              day.temperature.maximum
+            )}°</span> <span class="min-temp">${Math.round(
+        day.temperature.minimum
+      )}°</span>
           </div>
         </div>`;
+    }
   });
   forecast.innerHTML = forecastHtml;
 }

@@ -96,6 +96,13 @@ div.col {
   opacity: 0.7;
 }
 
+.forecast-img {
+  display: block;
+  height: 80px;
+  width: 80px;
+  margin: 0 auto;
+}
+
 .forecast-temperature {
   color: #ee6352;
   font-size: 13px;
@@ -103,6 +110,11 @@ div.col {
 
 .max-temp {
   font-weight: 500;
+  padding: 0 10px;
+}
+.min-temp {
+  font-weight: 400;
+  padding: 0 10px;
 }
 
 footer {
