@@ -5,7 +5,7 @@ body {
 
 .box {
   background-color: #ffffff;
-  max-width: 600px;
+  max-width: 500px;
   margin: 10px auto;
   padding: 30px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
@@ -31,6 +31,12 @@ body {
   padding: 15px;
   line-height: 1;
   border-radius: 5px;
+}
+
+.search-button:hover {
+  color: white;
+  background-color: #ee6352;
+  /* border-color: #0dcaf0; */
 }
 
 main {
